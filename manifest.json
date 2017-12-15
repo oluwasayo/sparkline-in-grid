@@ -1,0 +1,6 @@
+{
+  "name": "sparkline",
+  "short_name": "sparkline",
+  "start_url": "/",
+  "display": "standalone"
+}

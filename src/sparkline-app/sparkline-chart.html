@@ -1,0 +1,73 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/vaadin-charts/vaadin-chart.html">
+<dom-module id="sparkline-chart">
+  <script>
+    class SparklineChart extends Vaadin.ChartElement {
+      static get is() {
+        return 'sparkline-chart'
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        let sparklineConfig = {
+          chart: {
+            backgroundColor: null,
+            borderWidth: 0,
+            type: 'line',
+            margin: [2, 0, 2, 0],
+            width: 120,
+            height: 20,
+
+            // small optimalization, saves 1-2 ms each sparkline
+            skipClone: true
+          },
+          xAxis: {
+            labels: {
+              enabled: false
+            },
+            title: {
+              text: null
+            },
+            startOnTick: false,
+            endOnTick: false,
+            tickPositions: []
+          },
+          yAxis: {
+            endOnTick: false,
+            startOnTick: false,
+            labels: {
+              enabled: false
+            },
+            title: {
+              text: null
+            },
+            tickPositions: [0]
+          },
+          legend: {
+            enabled: false
+          },
+          exporting: {
+            enabled: false
+          },
+          tooltip: {
+            enabled: false
+          },
+          plotOptions: {
+            series: {
+              animation: false,
+              lineWidth: 1,
+              shadow: false,
+              fillOpacity: 0.25,
+              marker: {
+                enabled: false
+              }
+            }
+          }
+        };
+        Polymer.RenderStatus.beforeNextRender(this, () => this.update(sparklineConfig));
+      }
+    }
+
+    customElements.define(SparklineChart.is, SparklineChart);
+  </script>
+</dom-module>
