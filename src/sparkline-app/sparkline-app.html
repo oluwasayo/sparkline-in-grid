@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="sparkline-chart.html">
 <link rel="import" href="../../bower_components/vaadin-grid/vaadin-grid.html">
+<link rel="import" href="sparkline-chart.html">
 
 <dom-module id="sparkline-app">
   <template>
@@ -8,12 +8,7 @@
       :host {
         display: block;
       }
-
     </style>
-    <sparkline-chart>
-      <vaadin-chart-series values="[1,7,3,1,5,6]"></vaadin-chart-series>
-    </sparkline-chart>
-
     <vaadin-grid items="[[items]]" id="grid">
       <vaadin-grid-column>
         <template>
@@ -44,11 +39,6 @@
             value: () => Array(1000).fill(1)
           }
         };
-      }
-
-      connectedCallback() {
-        super.connectedCallback();
-        Polymer.RenderStatus.beforeNextRender(this, () => this.$.grid.clearCache());
       }
     }
 

@@ -3,7 +3,9 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "vaadin-charts": "#master",
+    "highcharts": "5.0.12",
+    "vaadin-charts": "#chart-in-template-fix",
+    "vaadin-ordered-layout": "#master",
     "vaadin-grid": "4.1.0-beta1"
   },
   "devDependencies": {
