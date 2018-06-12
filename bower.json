@@ -3,7 +3,7 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "vaadin-charts": "#fix/chart-in-grid-flow",
+    "vaadin-charts": "#full-height",
     "vaadin-ordered-layout": "#master",
     "vaadin-grid": "#master"
   },
