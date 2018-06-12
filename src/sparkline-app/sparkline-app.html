@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/vaadin-grid/vaadin-grid.html">
+<link rel="import" href="../../bower_components/vaadin-ordered-layout/vaadin-horizontal-layout.html">
 <link rel="import" href="../../bower_components/vaadin-ordered-layout/vaadin-vertical-layout.html">
 <link rel="import" href="sparkline-chart.html">
 
@@ -11,8 +12,15 @@
         height: 100vh;
       }
     </style>
+    <!-- Uncomment this and comment the vertical layout to see how chart behaves in non-flex container -->
+    <!--<vaadin-chart type="column" chart3d categories='["Apples", "Oranges"]'>-->
+      <!--<vaadin-chart-series title="John" values="[5,3]" stack="male" stacking="normal"></vaadin-chart-series>-->
+    <!--</vaadin-chart>-->
     <vaadin-vertical-layout style="height: 100%;">
-      <vaadin-chart type="column" chart3d categories='["Apples", "Oranges"]' style="flex-grow: 1;">
+      <vaadin-chart type="column" chart3d categories='["Apples", "Oranges"]' style="flex: 1; flex-grow: 1;">
+        <vaadin-chart-series title="John" values="[5,3]" stack="male" stacking="normal"></vaadin-chart-series>
+      </vaadin-chart>
+      <vaadin-chart type="column" chart3d categories='["Apples", "Oranges"]' style="flex: 1; flex-grow: 2;">
         <vaadin-chart-series title="John" values="[5,3]" stack="male" stacking="normal"></vaadin-chart-series>
       </vaadin-chart>
     </vaadin-vertical-layout>
